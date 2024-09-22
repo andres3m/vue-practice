@@ -17,7 +17,10 @@
    <div v-else-if="contador>0"> Es mayor de 0</div>
 
    <!-- Componente que aparece o no aparece -->
-    <div v-show="comprobacion">No esta permitido el 0</div>
+  <div v-show="comprobacion">No esta permitido el 0</div>
+  <img :src=image1 alt="Countryside">
+  <img :src=image2 alt="Vue logo">
+  <img :src=image3 alt="Landscape">
 
 </template>
 
@@ -32,6 +35,10 @@
   
   // Variables reactivas
   import { ref, computed } from "vue";
+  import { valores } from "./datos.js"
+  import image2 from "./assets/logo.svg"
+  const image1 = valores[0].web;
+  const image3 = "landscape.png"
   const miColor = ref("azul");
   const contador = ref(0);
   const decremento = () => {
@@ -71,6 +78,10 @@
 
   .azul{
     color: blue;
+  }
+
+  img {
+    max-width: 25vw;
   }
 
 </style>
